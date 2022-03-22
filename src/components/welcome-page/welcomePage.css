@@ -1,0 +1,34 @@
+.welcome-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  text-align: center;
+}
+
+h1 {
+  width: 412px;
+  height: 41px;
+  color: #293264;
+  font-weight: bold;
+  font-size: 50px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+p {
+  font-weight: 400;
+  font-size: 20px;
+  color: #293264;
+
+}
+
+.start-game-button {
+  width: 193px;
+  height: 52px;
+  font-size: 18px;
+  color: #F5F7FB;
+  background: #4D5B9E;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
