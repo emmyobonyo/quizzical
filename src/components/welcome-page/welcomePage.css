@@ -1,14 +1,14 @@
 .blob-top {
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 0;
+  top: 0;
   width: 200px;
 }
 
 .blob-bottom {
   position: absolute;
-  left: 0px;
-  bottom: 0px;
+  left: 0;
+  bottom: 0;
   width: 200px;
 }
 
@@ -25,7 +25,7 @@ h1 {
   color: #293264;
   font-weight: bold;
   font-size: 50px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   margin-bottom: 0;
 }
 
@@ -34,15 +34,14 @@ p {
   font-size: 20px;
   color: #293264;
   margin-top: 7px;
-
 }
 
 .start-game-button {
   width: 193px;
   height: 52px;
   font-size: 18px;
-  color: #F5F7FB;
-  background: #4D5B9E;
+  color: #f5f7fb;
+  background: #4d5b9e;
   border-radius: 15px;
   border: none;
   cursor: pointer;
