@@ -1,7 +1,14 @@
-.blobs {
+.blob-top {
   position: absolute;
   right: 0px;
   top: 0px;
+  width: 200px;
+}
+
+.blob-bottom {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
   width: 200px;
 }
 

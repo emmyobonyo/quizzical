@@ -1,11 +1,12 @@
 import React from 'react'
 import './welcomePage.css'
-import blobs from '../../images/blobs.png'
+import blobTop from '../../images/blobs.png'
+import blobBottom from '../../images/blobs1.png'
 
 function WelcomePage() {
   return (
     <div>
-      <img src={ blobs } className="blobs"/>
+      <img src={ blobTop } className="blob-top" />
       <div className="welcome-page">
         <div>
           <h1>Quizzical</h1>
@@ -13,6 +14,7 @@ function WelcomePage() {
           <button className="start-game-button">Start Game</button>
         </div>
       </div>
+      <img src={ blobBottom } className="blob-bottom"/>
     </div>
   )
 }
