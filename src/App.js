@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import WelcomePage from './components/welcome-page/WelcomePage';
 import getQuestions from './components/api/api';
-// import Questionaire from './components/questionnaire/Questionaire';
+import Questionaire from './components/questionnaire/Questionaire';
 import './App.css';
 
 function App() {
@@ -16,7 +16,12 @@ function App() {
   }, []);
 
   const quiz = questions.map((question, index) => (
-    <p key={index}>{question.correct_answer}</p>
+    <Questionaire
+      key={index}
+      question={question.question}
+      incorrectAnswers={question.incorrect_answers}
+      correctAnswer={question.correct_answer}
+    />
   ));
 
   const startQuiz = () => {

@@ -1,0 +1,21 @@
+.quiz {
+  width: 60%;
+  margin: auto;
+}
+
+.quiz-heading {
+  color: #293264;
+}
+
+.quiz-answers {
+  display: flex;
+  justify-content: space-between;
+  color: #293264;
+  cursor: pointer;
+}
+
+.answers {
+  border: 1px solid #4D5B9E;
+  border-radius: 8px;
+  padding: 10px;
+}
