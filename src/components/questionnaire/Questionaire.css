@@ -19,3 +19,10 @@
   border-radius: 8px;
   padding: 10px;
 }
+
+.clicked {
+  border: 1px solid #4D5B9E;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: lightblue;
+}
