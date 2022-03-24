@@ -42,7 +42,6 @@ function Questionaire({ question, incorrectAnswers, correctAnswer }) {
         <h1 className="quiz-heading">{question}</h1>
         <div className="quiz-answers">
           { renderedAnswersArray }
-          <div className="answers">{ correctAnswer }</div>
         </div>
       </div>
     </div>
