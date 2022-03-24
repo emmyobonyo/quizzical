@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   const [questions, setQuestions] = useState([]);
-  const [welcomePage, setWelcomePage] = useState(false);
+  const [welcomePage, setWelcomePage] = useState(true);
 
   useEffect(() => {
     getQuestions().then((data) => {
@@ -19,11 +19,13 @@ function App() {
     <p key={index}>{question.correct_answer}</p>
   ));
 
+  const startQuiz = () => {
+    setWelcomePage((welcomePage) => !welcomePage);
+  };
+
   return (
     <div>
-      { welcomePage
-        ? <WelcomePage startQuiz={setWelcomePage((welcomePage) => !welcomePage)} />
-        : quiz }
+      { welcomePage ? <WelcomePage startQuiz={startQuiz} /> : quiz }
     </div>
   );
 }
