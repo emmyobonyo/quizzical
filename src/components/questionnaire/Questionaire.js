@@ -7,14 +7,14 @@ function Questionaire({ question, incorrectAnswers, correctAnswer }) {
   const answersArray = [];
   answersArray.push({
     id: correctAnswer,
-    answer: true,
+    correctAnswer: true,
     title: correctAnswer,
     clicked: false,
   });
   incorrectAnswers.map((incorrectAnswer) => (
     answersArray.push({
       id: incorrectAnswer,
-      answer: false,
+      correctAnswer: false,
       title: incorrectAnswer,
       clicked: false,
     })
