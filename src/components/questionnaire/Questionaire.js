@@ -24,7 +24,7 @@ function Questionaire({ question, incorrectAnswers, correctAnswer }) {
 
   function clickAnswer(id) {
     return setAnswers((answer) => answer.map((answer) => (
-      answer.id === id ? { ...answer, clicked: !answer.clicked }
+      answer.id === id || answer.clicked === true ? { ...answer, clicked: !answer.clicked }
         : answer
     )));
   }
