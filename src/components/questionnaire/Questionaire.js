@@ -4,8 +4,22 @@ import BlogImages from '../blob-images/BlogImages';
 import './Questionaire.css';
 
 function Questionaire({ question, incorrectAnswers, correctAnswer }) {
-  const incorrectAnswersList = incorrectAnswers.map((incorrectAnswer) => (
-    <div key={incorrectAnswer} className="answers">{incorrectAnswer}</div>
+  const answersArray = [];
+  answersArray.push({
+    id: correctAnswer,
+    answer: true,
+    title: correctAnswer,
+  });
+  incorrectAnswers.map((incorrectAnswer) => (
+    answersArray.push({
+      id: incorrectAnswer,
+      answer: false,
+      title: incorrectAnswer,
+    })
+  ));
+
+  const renderedAnswersArray = answersArray.map((answersArray) => (
+    <div key={answersArray.id} className="answers">{answersArray.title}</div>
   ));
 
   return (
@@ -14,7 +28,7 @@ function Questionaire({ question, incorrectAnswers, correctAnswer }) {
       <div className="quiz">
         <h1 className="quiz-heading">{question}</h1>
         <div className="quiz-answers">
-          { incorrectAnswersList }
+          { renderedAnswersArray }
           <div className="answers">{ correctAnswer }</div>
         </div>
       </div>
