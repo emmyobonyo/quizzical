@@ -1,15 +1,29 @@
 /* eslint-disable  react/no-array-index-key */
+import { useEffect, useState } from 'react';
 import WelcomePage from './components/welcome-page/WelcomePage';
-import questions from './components/api/api';
+import getQuestions from './components/api/api';
+// import Questionaire from './components/questionnaire/Questionaire';
 import './App.css';
 
 function App() {
+  const [questions, setQuestions] = useState([]);
+  const [welcomePage, setWelcomePage] = useState(false);
+
+  useEffect(() => {
+    getQuestions().then((data) => {
+      setQuestions(data.results);
+    });
+  }, []);
+
+  const quiz = questions.map((question, index) => (
+    <p key={index}>{question.correct_answer}</p>
+  ));
+
   return (
     <div>
-      <WelcomePage />
-      { questions[0].map((question, index) => (
-        <p key={index}>{question.question}</p>
-      )) }
+      { welcomePage
+        ? <WelcomePage startQuiz={setWelcomePage((welcomePage) => !welcomePage)} />
+        : quiz }
     </div>
   );
 }
