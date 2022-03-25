@@ -15,22 +15,14 @@ function App() {
     });
   }, []);
 
-  const quiz = questions.map((question, index) => (
-    <Questionaire
-      key={index}
-      question={question.question}
-      incorrectAnswers={question.incorrect_answers}
-      correctAnswer={question.correct_answer}
-    />
-  ));
-
   const startQuiz = () => {
     setWelcomePage((welcomePage) => !welcomePage);
   };
 
   return (
     <div>
-      { welcomePage ? <WelcomePage startQuiz={startQuiz} /> : quiz }
+      { welcomePage ? <WelcomePage startQuiz={startQuiz} />
+        : <Questionaire questions={questions} /> }
     </div>
   );
 }
