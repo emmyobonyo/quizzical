@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
@@ -30,7 +31,7 @@ function Questionaire({ questions }) {
   });
 
   const [answers, setAnswers] = useState(answerArray);
-  // const [correctAnswers, setCorrectAnswers] = useState(false);
+  const [correctAnswers, setCorrectAnswers] = useState(false);
 
   function clickAnswer(id, question) {
     return setAnswers((answer) => answer.map((answer) => (
@@ -40,16 +41,19 @@ function Questionaire({ questions }) {
     )));
   }
 
-  // const getCorrectAnswers = () => {
-  //   setCorrectAnswers(true);
-  // };
+  const getCorrectAnswers = () => {
+    setCorrectAnswers(true);
+  };
 
   const quiz = questions.map((question, index) => (
     <div className="quiz" key={question.question}>
       <h1 className="quiz-heading">{question.question}</h1>
       <div className="quiz-answers">
-        { answers.map((answer) => (
+        { !correctAnswers && answers.map((answer) => (
           answer.question === index ? <div key={answer.id} className={answer.clicked ? 'clicked' : 'answers'} onClick={() => clickAnswer(answer.id, answer.question)} aria-hidden="true">{answer.title}</div> : ''
+        )) }
+        { correctAnswers && answers.map((answer) => (
+          answer.question === index ? <div key={answer.id} className={answer.correctAnswer ? 'correct-answer' : answer.clicked ? 'clicked' : 'answers'} onClick={() => clickAnswer(answer.id, answer.question)} aria-hidden="true">{answer.title}</div> : ''
         )) }
       </div>
     </div>
@@ -59,7 +63,7 @@ function Questionaire({ questions }) {
     <div>
       <BlogImages />
       { quiz }
-      <CorrectAnswersButton /* getCorrectAnswer={getCorrectAnswers} */ />
+      <CorrectAnswersButton getCorrectAnswer={getCorrectAnswers} />
     </div>
   );
 }

@@ -26,3 +26,10 @@
   padding: 10px;
   background-color: lightblue;
 }
+
+.correct-answer {
+  border: 1px solid #4d5b9e;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: lightcoral;
+}

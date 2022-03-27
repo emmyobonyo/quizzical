@@ -1,14 +1,14 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-function CorrectAnswersButton() {
+function CorrectAnswersButton({ getCorrectAnswer }) {
   return (
-    <button type="button">CorrectAnswersButton</button>
+    <button type="button" onClick={getCorrectAnswer}>CorrectAnswersButton</button>
   );
 }
 
-// CorrectAnswersButton.propTypes = {
-//   getCorrectAnswer: PropTypes.isRequired,
-// };
+CorrectAnswersButton.propTypes = {
+  getCorrectAnswer: PropTypes.isRequired,
+};
 
 export default CorrectAnswersButton;
