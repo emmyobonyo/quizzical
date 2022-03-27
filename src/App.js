@@ -1,4 +1,3 @@
-/* eslint-disable  react/no-array-index-key */
 import { useEffect, useState } from 'react';
 import WelcomePage from './components/welcome-page/WelcomePage';
 import getQuestions from './components/api/api';
