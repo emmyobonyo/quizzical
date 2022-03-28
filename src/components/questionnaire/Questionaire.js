@@ -1,6 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
+import { decode } from 'html-entities';
 import PropTypes from 'prop-types';
 import BlogImages from '../blob-images/BlogImages';
 import CorrectAnswersButton from '../correctAnswersButton/CorrectAnswersButton';
@@ -60,7 +61,7 @@ function Questionaire({ questions }) {
 
   const quiz = questions.map((question, index) => (
     <div className="quiz" key={question.question}>
-      <h1 className="quiz-heading">{question.question}</h1>
+      <h1 className="quiz-heading">{decode(question.question)}</h1>
       <div className="quiz-answers">
         { !correctAnswers && answers.map((answer) => (
           answer.question === index ? <div key={answer.id} className={answer.clicked ? 'clicked' : 'answers'} onClick={() => clickAnswer(answer.id, answer.question)} aria-hidden="true">{answer.title}</div> : ''
