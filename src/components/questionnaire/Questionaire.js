@@ -42,6 +42,16 @@ function Questionaire({ questions }) {
   }
 
   const getCorrectAnswers = () => {
+    let correctAnswersCount = 0;
+    answers.forEach((answer) => {
+      if (answer.correctAnswer && answer.clicked) {
+        correctAnswersCount += 1;
+      }
+    });
+    const paragraph = document.createElement('p');
+    paragraph.innerHTML = correctAnswersCount;
+    const div = document.getElementById('correct-answers');
+    div.appendChild(paragraph);
     setCorrectAnswers(true);
   };
 
@@ -63,7 +73,9 @@ function Questionaire({ questions }) {
     <div>
       <BlogImages />
       { quiz }
-      <CorrectAnswersButton getCorrectAnswer={getCorrectAnswers} />
+      <div id="correct-answers" className="correct-answers-div">
+        <CorrectAnswersButton getCorrectAnswer={getCorrectAnswers} />
+      </div>
     </div>
   );
 }

@@ -33,3 +33,8 @@
   padding: 10px;
   background-color: lightcoral;
 }
+
+.correct-answers-div {
+  display: flex;
+  justify-content: space-around;
+}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function CorrectAnswersButton({ getCorrectAnswer }) {
   return (
-    <button type="button" onClick={getCorrectAnswer}>CorrectAnswersButton</button>
+    <button className="showCorrect" type="button" onClick={getCorrectAnswer}>CorrectAnswersButton</button>
   );
 }
 
