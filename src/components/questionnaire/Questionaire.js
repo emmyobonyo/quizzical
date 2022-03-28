@@ -30,7 +30,9 @@ function Questionaire({ questions }) {
     }
   });
 
-  const [answers, setAnswers] = useState(answerArray);
+  const randomAnswersArray = answerArray.sort(() => Math.random() - 0.5);
+
+  const [answers, setAnswers] = useState(randomAnswersArray);
   const [correctAnswers, setCorrectAnswers] = useState(false);
 
   function clickAnswer(id, question) {
@@ -49,7 +51,8 @@ function Questionaire({ questions }) {
       }
     });
     const paragraph = document.createElement('p');
-    paragraph.innerHTML = correctAnswersCount;
+    paragraph.className = 'parahraph';
+    paragraph.innerHTML = `You have got ${correctAnswersCount}/5 ${correctAnswersCount === 1 ? 'answer' : 'answers'} correct`;
     const div = document.getElementById('correct-answers');
     div.appendChild(paragraph);
     setCorrectAnswers(true);
@@ -63,7 +66,7 @@ function Questionaire({ questions }) {
           answer.question === index ? <div key={answer.id} className={answer.clicked ? 'clicked' : 'answers'} onClick={() => clickAnswer(answer.id, answer.question)} aria-hidden="true">{answer.title}</div> : ''
         )) }
         { correctAnswers && answers.map((answer) => (
-          answer.question === index ? <div key={answer.id} className={answer.correctAnswer ? 'correct-answer' : answer.clicked ? 'clicked' : 'answers'} onClick={() => clickAnswer(answer.id, answer.question)} aria-hidden="true">{answer.title}</div> : ''
+          answer.question === index ? <div key={answer.id} className={answer.correctAnswer ? 'correct-answer' : answer.clicked ? 'show-wrong-answer' : 'wrong-answers'} onClick={() => clickAnswer(answer.id, answer.question)} aria-hidden="true">{answer.title}</div> : ''
         )) }
       </div>
     </div>
@@ -74,7 +77,7 @@ function Questionaire({ questions }) {
       <BlogImages />
       { quiz }
       <div id="correct-answers" className="correct-answers-div">
-        <CorrectAnswersButton getCorrectAnswer={getCorrectAnswers} />
+        <CorrectAnswersButton getCorrectAnswer={getCorrectAnswers} resetGame={correctAnswers} />
       </div>
     </div>
   );
