@@ -70,15 +70,18 @@ function Questionaire({ questions }) {
           answer.question === index ? <div key={answer.id} className={answer.correctAnswer ? 'correct-answer' : answer.clicked ? 'show-wrong-answer' : 'wrong-answers'} onClick={() => clickAnswer(answer.id, answer.question)} aria-hidden="true">{answer.title}</div> : ''
         )) }
       </div>
+      <hr className="horizontal-line" />
     </div>
   ));
 
   return (
     <div>
       <BlogImages />
-      { quiz }
-      <div id="correct-answers" className="correct-answers-div">
-        <CorrectAnswersButton getCorrectAnswer={getCorrectAnswers} resetGame={correctAnswers} />
+      <div className="quiz-container">
+        { quiz }
+        <div id="correct-answers" className="correct-answers-div">
+          <CorrectAnswersButton getCorrectAnswer={getCorrectAnswers} resetGame={correctAnswers} />
+        </div>
       </div>
     </div>
   );
