@@ -64,10 +64,10 @@ function Questionaire({ questions }) {
       <h1 className="quiz-heading">{decode(question.question)}</h1>
       <div className="quiz-answers">
         { !correctAnswers && answers.map((answer) => (
-          answer.question === index ? <div key={answer.id} className={answer.clicked ? 'clicked' : 'answers'} onClick={() => clickAnswer(answer.id, answer.question)} aria-hidden="true">{answer.title}</div> : ''
+          answer.question === index ? <div key={answer.id} className={answer.clicked ? 'clicked' : 'answers'} onClick={() => clickAnswer(answer.id, answer.question)} aria-hidden="true">{decode(answer.title)}</div> : ''
         )) }
         { correctAnswers && answers.map((answer) => (
-          answer.question === index ? <div key={answer.id} className={answer.correctAnswer ? 'correct-answer' : answer.clicked ? 'show-wrong-answer' : 'wrong-answers'} onClick={() => clickAnswer(answer.id, answer.question)} aria-hidden="true">{answer.title}</div> : ''
+          answer.question === index ? <div key={answer.id} className={answer.correctAnswer ? 'correct-answer' : answer.clicked ? 'show-wrong-answer' : 'wrong-answers'} onClick={() => clickAnswer(answer.id, answer.question)} aria-hidden="true">{decode(answer.title)}</div> : ''
         )) }
       </div>
       <hr className="horizontal-line" />
