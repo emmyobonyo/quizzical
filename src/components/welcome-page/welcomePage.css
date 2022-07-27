@@ -1,0 +1,49 @@
+.blob-top {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 200px;
+}
+
+.blob-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+}
+
+.welcome-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+h1.heading {
+  width: 412px;
+  color: #293264;
+  font-weight: bold;
+  font-size: 50px;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  margin-bottom: 0;
+}
+
+p {
+  font-weight: 400;
+  font-size: 20px;
+  color: #293264;
+  margin-top: 7px;
+}
+
+.start-game-button {
+  width: 193px;
+  height: 52px;
+  font-size: 18px;
+  color: #f5f7fb;
+  background: #4d5b9e;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+}
